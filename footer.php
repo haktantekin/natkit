@@ -37,6 +37,14 @@
   </div>
 </div> -->
 <?php wp_footer(); ?>
+<div class="fix-ads">
+  <div class="ads">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3698758194662559" data-ad-slot="2790051033" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+</div>
 <script async src="<?php bloginfo('template_url'); ?>/assets/public/js/natkah-min.js"></script>
 </body>
 

@@ -2,13 +2,12 @@
 
 "use strict";
 
-// Load plugins
-var gulp = require("gulp"),
-  sass = require("gulp-sass"),
-  concat = require('gulp-concat'),
-  minifyCSS = require('gulp-minify-css'),
-  uglify = require('gulp-uglify');
+let gulp = require('gulp'),sass = require("gulp-sass")(require("node-sass")),
+concat = require('gulp-concat'),
+minifyCSS = require('gulp-minify-css'),
+uglify = require('gulp-uglify');
 
+// Load plugins
 // CSS task
 function css() { 
   return gulp

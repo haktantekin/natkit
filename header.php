@@ -35,7 +35,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
     <?php if (is_singular()) wp_enqueue_script('comment-reply'); ?>
-
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3698758194662559" crossorigin="anonymous"></script>
 
     <?php wp_head(); ?>
 </head>
@@ -86,6 +86,13 @@
                 <?php wp_nav_menu(array('theme_location' => 'Header')); ?>
             </nav>
         </div>
+
     </header>
     <main class="main">
         <div class="container">
+            <div class="ads">
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3698758194662559" data-ad-slot="2790051033" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>

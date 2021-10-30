@@ -6,69 +6,67 @@ WebFont.load({
     }
 });
 
+(adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-7132687191086887",
+    enable_page_level_ads: true
+});
+
 // Analytics 
-window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config','G-67DGC1MGCF');
+window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-67DGC1MGCF');
 // Analytics
 $(document).ready(function () {
-    (function ($) {
-        $.fn.visible = function (partial) {
-            var $t = $(this),
-                $w = $(window),
-                viewTop = $w.scrollTop(),
-                viewBottom = viewTop + $w.height(),
-                _top = $t.offset().top,
-                _bottom = _top + $t.height(),
-                compareTop = partial === true ? _bottom : _top,
-                compareBottom = partial === true ? _top : _bottom;
-            return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
-        };
-    })(jQuery);
+    // (function ($) {
+    //     $.fn.visible = function (partial) {
+    //         var $t = $(this),
+    //             $w = $(window),
+    //             viewTop = $w.scrollTop(),
+    //             viewBottom = viewTop + $w.height(),
+    //             _top = $t.offset().top,
+    //             _bottom = _top + $t.height(),
+    //             compareTop = partial === true ? _bottom : _top,
+    //             compareBottom = partial === true ? _top : _bottom;
+    //         return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
+    //     };
+    // })(jQuery);
 
-    var win = $(window);
-    var allMods = $(".content-item");
-    allMods.each(function (i, el) {
-        var el = $(el);
-        if (el.visible(true)) {
-            el.addClass("already-visible");
-        }
-    });
-    win.scroll(function (event) {
-        allMods.each(function (i, el) {
-            var el = $(el);
-            if (el.visible(true)) {
-                el.addClass("come-in");
-            }
-        });
-
-    });
-
-    $(".side-panel").slideReveal({
-        trigger: $(".mobile-menu-icon"),
-        position: "left",
-        overlay: true,
-        display: "block"
-    });
+    // var win = $(window);
+    // var allMods = $(".content-item");
+    // allMods.each(function (i, el) {
+    //     var el = $(el);
+    //     if (el.visible(true)) {
+    //         el.addClass("already-visible");
+    //     }
+    // });
+    // win.scroll(function (event) {
+    //     allMods.each(function (i, el) {
+    //         var el = $(el);
+    //         if (el.visible(true)) {
+    //             el.addClass("come-in");
+    //         }
+    //     });
+    // });
 
     $(".side-panel-close").click(function () {
         $(".mobile-menu-icon").click();
     });
 
-    $(".menu-icon").click(function () {
-        $(this).toggleClass("open");
-        if ($(this).hasClass("open")) {
+    $(".mobile-menu-icon").click(function () {
+        if (!$('.side-panel').hasClass("open")) {
+            $('.side-panel').addClass("open");
             $("body").css("overflow", "hidden");
-            $(".nav ul").show();
-            $(".nav ul").animate({ left: "0" }, 600)
+            $(".side-panel").show();
+            $(".side-panel").animate({ left: "0" }, 600)
         }
         else {
-            $(".nav ul").animate({ left: -$(window).width() }, 600, function () {
+            $('.side-panel').removeClass("open");
+            $(".side-panel").animate({ left: -$(window).width() }, 600, function () {
                 $("body").css("overflow-y", "auto");
-                $(".nav ul").hide()
+                $(".side-panel").hide()
             })
         }
     });
 
-    $('.page-content-text .post-word').each(function () {
+    $('.page-content-text .post-word').each(function (a, index) {
         $(this).wrapInner("<span></span>")
         $(this).append('<div class="post-featured"><div class="copy-text"><i class="far fa-copy"></i> Kopyala</div><div class="facebook-share"><i class="fab fa-facebook-f"></i></div><div class="twitter-share"><i class="fab fa-twitter"></i></div></div><div class="pinterest-share"><i class="fab fa-pinterest"></i></div></div>');
         $('.copy-text').click(function (e) {
@@ -84,6 +82,7 @@ $(document).ready(function () {
             document.body.removeChild(element);
             $(this).text('Kopyalandı!');
         });
+
     });
     $('.page-content-text .post-word .facebook-share').on('click', function () {
         var _url = window.location.href;
